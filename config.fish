@@ -27,6 +27,7 @@ alias pamcan pacman
 alias ls 'eza --icons'
 alias clear "printf '\033[2J\033[3J\033[1;1H'"
 alias q 'qs -c ii'
+alias tty-clock 'tty-clock -c -s -C 6'
 
 alias benchmark "sysbench cpu run; sysbench cpu --threads=8 run"
 
