@@ -8,7 +8,7 @@ set fish_greeting
 
 # ====== conectar VPN ======
 function connect_objetiva
-    cd ~/Documentos/Pessoal/openvpn; or return
+    cd ~/Documents/Pessoal/openvpn; or return
     sudo openvpn --config objetiva-arthur.cruz.ovpn
 end
 
@@ -24,7 +24,6 @@ end
 
 # ====== aliases ======
 alias pamcan pacman
-alias ls 'eza --icons'
 alias clear "printf '\033[2J\033[3J\033[1;1H'"
 alias q 'qs -c ii'
 alias tty-clock 'tty-clock -c -s -C 6'
@@ -51,9 +50,16 @@ function fish_prompt
     printf '$ '
 end
 
-# ====== Configurações opcionais adicionais ======
-# (Caso esteja usando starship e queira ativar ele)
-# starship init fish | source
-# if test -f ~/.local/state/quickshell/user/generated/terminal/sequences.txt
-#     cat ~/.local/state/quickshell/user/generated/terminal/sequences.txt
-# end
+alias get_idf='. ~/esp/esp-idf/export.fish'
+
+function teste
+    set my_id $KITTY_WINDOW_ID
+    clear
+    fastfetch
+    kitty @ scroll-window --match id:$my_id start
+    kitty @ launch --cwd=current --location=vsplit btop > /dev/null
+    kitty @ launch --cwd=current --location=hsplit spotify_player > /dev/null
+    kitty @ launch --cwd=current --location=vsplit cava > /dev/null
+    kitty @ focus-window --match id:$my_id
+    kitty @ launch --cwd=current --location=hsplit tty-clock -c -C 7 > /dev/null
+end
