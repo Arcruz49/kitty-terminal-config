@@ -24,12 +24,6 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 
-# Função para conectar VPN
-connect_objetiva() {
-    cd ~/Documentos/Pessoal/openvpn || return
-    sudo openvpn --config objetiva-arthur.cruz.ovpn
-}
-
 # Ativa autocomplete para Bash
 if [ -f /usr/share/bash-completion/bash_completion ]; then
     . /usr/share/bash-completion/bash_completion

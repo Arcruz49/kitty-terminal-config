@@ -6,11 +6,6 @@ end
 # ====== no greeting ======
 set fish_greeting
 
-# ====== conectar VPN ======
-function connect_objetiva
-    cd ~/Documents/Pessoal/openvpn; or return
-    sudo openvpn --config objetiva-arthur.cruz.ovpn
-end
 
 # ====== conectar VPN fedora-server aka fedorento server ======
 function connect_fedora_server
